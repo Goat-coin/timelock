@@ -20,7 +20,7 @@ contract LPLock is Ownable {
   bool public locked = false;
   bool public done = false;
 
-  function lock(uint256 amount) external onlyOwner {
+  function lockLP(uint256 amount) external onlyOwner {
     require(!done, "Already used");
     require(!locked, "Already locked");
 
@@ -31,7 +31,7 @@ contract LPLock is Ownable {
     locked = true;
   }
 
-  function unlock() external onlyOwner {
+  function unlockLP() external onlyOwner {
     require(block.timestamp >= startTime + lockLength, "Not unlocked");
     require(locked, "Not locked");
 

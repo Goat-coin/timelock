@@ -11,8 +11,8 @@
     "deploy:mainnet": "yarn truffle migrate --network mainnet",
     "deploy:fork": "yarn truffle migrate --network fork",
     "console:fork": "yarn truffle console --network fork",
-    "run:fork": "yarn ganache-cli --fork https://mainnet.infura.io/v3/bd0c2cf1b7de43c9a3a70ce2f577d29c --forkCacheSize -1 --keepAliveTimeout 10000 --defaultBalanceEther 1000 --gasPrice 1000000000 --gasLimit 20000000 --chainId 1 --networkId 1 --quiet --unlock \"0xBE0eB53F46cd790Cd13851d5EFf43D12404d33E8\"",
-    "test:fork": "yarn concurrently --success first --kill-others \"yarn run:fork\" \"yarn truffle test --network fork ./test/singularity.js\""
+    "flatten": "yarn truffle-flattener contracts/LPLock.sol",
+    "run:fork": "yarn ganache-cli --fork https://mainnet.infura.io/v3/bd0c2cf1b7de43c9a3a70ce2f577d29c --forkCacheSize -1 --keepAliveTimeout 10000 --defaultBalanceEther 1000 --gasPrice 1000000000 --gasLimit 20000000 --chainId 1 --networkId 1 --quiet --unlock \"0xBE0eB53F46cd790Cd13851d5EFf43D12404d33E8\""
   },
   "dependencies": {
     "@openzeppelin/contracts": "^3.3.0",
@@ -21,7 +21,8 @@
     "dotenv": "^8.2.0",
     "ethers": "^5.0.29",
     "truffle": "^5.1.57",
-    "truffle-assertions": "^0.9.2"
+    "truffle-assertions": "^0.9.2",
+    "truffle-flattener": "^1.5.0"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",

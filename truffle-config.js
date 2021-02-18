@@ -10,6 +10,11 @@ module.exports = {
       port: 8545,
       network_id: 1,
     },
+    bsc: {
+      host: env.BSC,
+      port: 443,
+      network_id: 56,
+    },
     kovan: {
       provider: () => new HDWalletProvider(env.MEMO, env.KINFURA),
       network_id: 42,
