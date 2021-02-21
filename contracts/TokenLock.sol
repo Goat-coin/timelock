@@ -9,7 +9,7 @@ import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 /// @author Affax, milkycyborg
 /// @dev Contract that locks team tokens for a year
 /// In Code We Trust.
-contract LPLock is Ownable {
+contract TokenLock is Ownable {
   using SafeERC20 for IERC20;
 
   uint256 public constant lockLength = 365 days;
@@ -20,7 +20,7 @@ contract LPLock is Ownable {
   bool public locked = false;
   bool public done = false;
 
-  function lockLP(uint256 amount) external onlyOwner {
+  function lockToken(uint256 amount) external onlyOwner {
     require(!done, "Already used");
     require(!locked, "Already locked");
 
@@ -31,7 +31,7 @@ contract LPLock is Ownable {
     locked = true;
   }
 
-  function unlockLP() external onlyOwner {
+  function unlockToken() external onlyOwner {
     require(block.timestamp >= startTime + lockLength, "Not unlocked");
     require(locked, "Not locked");
 
