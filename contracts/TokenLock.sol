@@ -13,7 +13,7 @@ contract TokenLock is Ownable {
   using SafeERC20 for IERC20;
 
   uint256 public constant lockLength = 365 days;
-  IERC20 public constant lockedToken = IERC20(0xd33bfc66b39189e3452c6e65e56572a6228dd61b);
+  IERC20 public constant lockedToken = IERC20(0xd33bFC66B39189E3452C6E65e56572a6228dd61b);
 
   uint256 public lockAmount = 0;
   uint256 public startTime = 0;
