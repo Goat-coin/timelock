@@ -5,11 +5,11 @@ import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/SafeERC20.sol";
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
-/// @title Token Lock Contract
+/// @title Treasury Lock 2M Contract
 /// @author milkycyborg
 /// @dev Contract that locks 1/5 of treasury tokens for 2 month
 /// In Code We Trust.
-contract TokenLock is Ownable {
+contract TreasuryLock2M is Ownable {
   using SafeERC20 for IERC20;
 
   uint256 public constant lockLength = 60 days;
